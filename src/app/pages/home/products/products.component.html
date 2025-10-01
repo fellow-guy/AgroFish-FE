@@ -1,0 +1,33 @@
+<section [id]="productType" class="row position-relative">
+    <div class="bg-primary vh-100"  [ngClass]="productType+'-bg'"></div>
+    <div class="container d-flex justify-content-center align-items-center flex-column position-absolute w-100 h-100 px-2 px-lg-5">
+        <h1 class="fs-1 text-white fw-bolder pb-2">{{title}}</h1>
+        <p class="fs-4 text-white col-10 col-lg-8 text-center">{{description}}</p>
+        <div class="col-10 col-lg-7 bg-white rounded-pill overflow-hidden btn-group my-3"  role="group" *ngIf="categoryList.length > 0">
+            <ng-container *ngFor="let category of categoryList">
+                <button type="button" class="btn btn-outline-primary" [ngClass]="category.active?'active':''" (click)="setCategoryActive(category.tag)">{{category.name}}</button>
+            </ng-container>
+            <button type="button" class="btn btn-outline-primary" (click)="resetCategoryActive()">See all</button>
+        </div>
+        <div class="col-10 col-lg-8 py-2" *ngIf="productList.length > 0">
+            <div class="row">
+                <div class="col-1 d-none d-lg-flex justify-content-center align-items-center">
+                    <button class="btn btn-secondary fw-bolder rounded-circle custom-aspect-ratio" (click)="moveRight()"><fa-icon [icon]="rightIcon"></fa-icon></button>
+                </div>
+                <div class="col-12 col-lg-10">
+                    <owl-carousel-o [options]="customOptions" #carrousel>
+                        <ng-container *ngFor="let product of productList">
+                            <ng-template carouselSlide>
+                                <app-product-item class="d-flex justify-content-center" [product]="product"></app-product-item>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </div>
+                <div class="col-1 d-none d-lg-flex justify-content-center align-items-center">
+                    <button class="btn btn-secondary fw-bolder rounded-circle custom-aspect-ratio" (click)="moveLeft()"><fa-icon [icon]="leftIcon"></fa-icon></button>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-outline-secondary rounded-pill fw-bolder fs-5 px-3 mt-3"><fa-icon [icon]="buttonIcon" class="pe-2"></fa-icon>{{buttonText}}</a>
+    </div>
+</section>

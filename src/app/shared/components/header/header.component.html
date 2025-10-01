@@ -1,0 +1,37 @@
+<header class="header-area p-relative">
+    <div
+        class="navbar-area navbar-style-three isSticky"
+        [ngClass]="{'color': isSticky}"
+    >
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+                <div class="row w-100 py-3 justify-content-center align-items-center">
+                    <div class="col-2">
+                        <a routerLink="/">
+                            <img class="img-fluid" src="assets/images/svg/logo.svg" alt="logo">
+                        </a>
+                    </div>
+                    <div class="col-5"></div>
+                    <div class="col-5">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav text-light justify-content-between align-items-center w-100">
+                                <li class="nav-item text-light">
+                                    <a routerLink="/" class="nav-link fs-5" #link="routerLinkActive" [class.text-light]="!link.isActive" routerLinkActive="text-secondary" [routerLinkActiveOptions]="{exact:true}"><b>Inicio</b></a>
+                                </li>
+                                <li class="nav-item text-light" [routerLink]="['/#about-us']">
+                                    <a href="#about-us" class="nav-link fs-5" #link2="routerLinkActive" [class.text-light]="!link2.isActive" routerLinkActive="text-secondary" [routerLinkActiveOptions]="{ exact: true }"><b>About Us</b></a>
+                                </li>
+                                <li class="nav-item text-light" [routerLink]="['/#seafood-products']">
+                                    <a href="#seafood-products" class="nav-link fs-5" #link3="routerLinkActive" [class.text-light]="!link3.isActive" routerLinkActive="text-secondary" [routerLinkActiveOptions]="{ exact: true }"><b>Seafood</b></a>
+                                </li>
+                                <li class="nav-item" [routerLink]="['/#contact-us']">
+                                    <a href="#contact-us" class="btn btn-light rounded-pill px-3 fs-5"><b>Contact Us</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

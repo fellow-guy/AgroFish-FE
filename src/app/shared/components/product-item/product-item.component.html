@@ -1,0 +1,17 @@
+<div class="rounded bg-white mx-1 overflow-hidden" [ngClass]="detailed? 'card-custom-aspect-ratio-detailed':'card-custom-aspect-ratio'">
+    <ng-container *ngIf="product!.images && product!.images.length > 0">
+        <img class="img-fluid w-100 img-custom-aspect-ratio object-fit-cover" [src]="product!.images[0]">
+        <img class="img-fluid w-100 img-custom-aspect-ratio object-fit-cover" src="assets/images/png/product_generic.png" *ngIf="product!.images.length == 0">
+    </ng-container>
+    <div class="p-3 position-relative">
+        <p class="fs-5 fw-bolder text-primary product-name">{{product!.name}}</p>
+        <p class="fs-6 text-dark opacity-25">{{product!.description}}</p>
+        <p class="fs-5 text-primary" *ngIf="detailed">{{product!.price | currency: '$'}}</p>
+        <p class="text-end position-absolute bottom-0 end-0 m-3">
+            <span *ngIf="detailed" class="pe-2">View</span>
+            <a class="btn btn-primary rounded-circle img-custom-aspect-ratio text-decoration-none" [routerLink]="['/product/'+product.link]">
+                <fa-icon [icon]="leftIcon" size="xs"></fa-icon>
+            </a>
+        </p>
+    </div>
+</div>

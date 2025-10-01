@@ -1,0 +1,16 @@
+.btn-outline-primary{
+    --bs-btn-active-color: #042F3B;
+    --bs-btn-active-bg: #9CB0C9;
+    --bs-btn-active-border-color: #9CB0C9;
+    --bs-btn-active-shadow: none;
+
+    --bs-btn-hover-color: #042F3B;
+    --bs-btn-hover-bg: #9CB0C9;
+    --bs-btn-hover-border-color: #9CB0C9;
+
+    --bs-btn-border-color: transparent;
+}
+
+.custom-aspect-ratio {
+    aspect-ratio: 1/1;
+}

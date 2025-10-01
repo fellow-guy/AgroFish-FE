@@ -1,0 +1,74 @@
+<div class="separator-height">&nbsp;</div>
+<section class="row bg-white">
+    <div class="container row justify-content-center align-items-center py-5">
+        <div class="col-11">
+            <a class="text-dark opacity-25 text-decoration-none">Home</a>
+            <span class="text-primary opacity-50 text-decoration-none px-2">/</span>
+            <a class="text-dark opacity-25 text-decoration-none">Products</a>
+            <span class="text-primary opacity-50 text-decoration-none px-2">/</span>
+            <a class="text-dark opacity-25 text-decoration-none">{{product.category.name}}</a>
+            <span class="text-primary opacity-50 text-decoration-none px-2">/</span>
+            <span>{{product.name}}</span>
+        </div>
+        <div class="col-11 py-4">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="row">
+                        <div class="col-10 d-flex justify-content-start">
+                            <img class="img-fluid object-fit-cover img-custom-aspect-ratio w-100" [src]="showcaseImage"/>
+                        </div>
+                        <div class="col-1 d-flex flex-column justify-content-between px-0">
+                            <button 
+                                class="btn btn-light w-100 btn-custom-aspect-ratio" 
+                                (click)="copyLink()"
+                                ngbPopover="Copied link!"
+                                [autoClose]="true"
+                                [closeDelay]="700"
+                                triggers="click:mouseleave"
+                            >
+                                <fa-icon [icon]="faShare"></fa-icon>
+                            </button>
+                            <div class="d-flex flex-column">
+                                <button class="btn btn-light w-100 btn-custom-aspect-ratio mb-1" (click)="prevImage()"><fa-icon [icon]="faPrev"></fa-icon></button>
+                                <button class="btn btn-light w-100 btn-custom-aspect-ratio" (click)="nextImage()"><fa-icon [icon]="faNext"></fa-icon></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <p class="fs-5 text-dark opacity-50">{{product.category.name}}</p>
+                    <h2 class="fs-2 fw-bold">{{product.name}}</h2>
+                    <p class="fs-3 fw-bolder pt-3">{{product!.price | currency: '$'}}</p>
+                    <p class="fs-5 fw-bold pt-3">Description:</p>
+                    <p class="fs-5 text-dark opacity-75">
+                        {{product.longDescription}} 
+                        <a class="text-primary cursor-pointer">See more</a>
+                    </p>
+                    <!--<div class="row pt-4">
+                        <div class="col-8">
+                            <button class="btn btn-secondary rounded fw-bolder fs-4 px-4 w-100">Order now</button>
+                        </div>
+                        <div class="col-4">
+                            <button class="btn btn-outline-primary rounded fw-bolder fs-4 px-4 w-100">Get a quote</button>
+                        </div>
+                    </div>-->
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-11 py-4">
+            <h4 class="fs-4 fw-bold">Related Products</h4>
+            <div class="row pt-3">
+                <div class="col-12">
+                    <owl-carousel-o [options]="customOptions" #carrousel>
+                        <ng-container *ngFor="let product of productList">
+                            <ng-template carouselSlide>
+                                <app-product-item class="d-flex justify-content-center" [product]="product" [detailed]="true"></app-product-item>
+                            </ng-template>
+                        </ng-container>
+                    </owl-carousel-o>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,38 @@
+<form class="row px-4" [formGroup]="contactForm" (ngSubmit)="sendForm()">
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <label for="name" class="form-label fs-4 fw-bold mb-1 text-light">Full Name*</label>
+            <input type="text" class="form-control" id="name" placeholder="Full Name" formControlName="name">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <label for="email" class="form-label fs-4 fw-bold mb-1 text-light">Email address*</label>
+            <input type="email" class="form-control" id="email" placeholder="me@contact.com" formControlName="email">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <label for="phone" class="form-label fs-4 fw-bold mb-1 text-light">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" placeholder="+999999999" formControlName="phone">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <label for="subject" class="form-label fs-4 fw-bold mb-1 text-light">Subject*</label>
+            <input type="text" class="form-control" id="subject" placeholder="Subject" formControlName="subject">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <label for="message" class="form-label fs-4 fw-bold mb-1 text-light">Message*</label>
+            <textarea type="text" class="form-control" id="message" placeholder="Message" formControlName="message"></textarea>
+        </div>
+    </div>
+    <div class="col-12 col-lg-12 d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-secondary px-5 py-2 text-uppercase fw-bold">Submit</button>
+    </div>
+    <div class="col-12 col-lg-12 d-flex justify-content-center mt-3">
+        <p class="my-0 text-light" [ngClass]="{'opacity-0': !sent}">We will contact you soon</p>
+    </div>
+</form>

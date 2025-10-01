@@ -1,0 +1,77 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: #042F3B;
+$secondary: #B9CF41;
+$dark: #010a0d;
+$light: #F4EFE2;
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'assets/fonts/style.scss';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+* {
+    font-family: "Lufga Regular", serif;
+    font-optical-sizing: auto;
+
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb{
+        background: rgba($color: #F8F0FB, $alpha: 0.2);
+        border-radius: 15px;
+    }
+    &::-webkit-scrollbar-button{
+        display: none;
+    }
+
+    --footer-height: 40px;
+}
+  
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    //background: url(./assets/images/svg/bg.svg) no-repeat;
+    background-color: var(--bs-primary);
+    background-attachment: fixed;
+    background-size: cover;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.custom-height {
+    min-height: calc(100vh - var(--footer-height) );
+}
+
+.hero {
+    background: url('assets/images/png/bg_1.png') no-repeat;
+    background-position: top;
+    background-size: 100%;
+    mix-blend-mode: luminosity;
+    filter: grayscale(1);
+    background-attachment: fixed;
+}
+
+.seafood-products-bg{
+    background: url('assets/images/png/bg_2.png') no-repeat;
+    background-position: top;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+.agricultural-products-bg{
+    background: url('assets/images/png/bg_3.png') no-repeat;
+    background-position: top;
+    background-size: 100%;
+    background-attachment: fixed;
+}

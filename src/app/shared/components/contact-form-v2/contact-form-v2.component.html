@@ -1,0 +1,33 @@
+<form class="row py-4" [formGroup]="contactForm" (ngSubmit)="sendForm()">
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <input type="text" class="form-control border-primary" id="name" placeholder="Full Name" formControlName="name">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <input type="email" class="form-control border-primary" id="email" placeholder="Email" formControlName="email">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <input type="tel" class="form-control border-primary" id="phone" placeholder="Phone Number" formControlName="phone">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <input type="text" class="form-control border-primary" id="subject" placeholder="Subject" formControlName="subject">
+        </div>
+    </div>
+    <div class="col-12 col-lg-12">
+        <div class="mb-3">
+            <textarea type="text" class="form-control border-primary" id="message" placeholder="Message" formControlName="message"></textarea>
+        </div>
+    </div>
+    <div class="col-12 col-lg-12 d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-primary px-5 py-2 text-uppercase fw-bold rounded-pill w-100">Submit</button>
+    </div>
+    <div class="col-12 col-lg-12 d-flex justify-content-center mt-3">
+        <p class="my-0 text-light" [ngClass]="{'opacity-0': !sent}">We will contact you soon</p>
+    </div>
+</form>
